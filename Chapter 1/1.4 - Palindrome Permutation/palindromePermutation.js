@@ -14,8 +14,27 @@ let isPermutationOfPalindrome = (string) => {
     return true;
 };
 
+let isPermutationOfPalindrome2 = (string) => {
+    var sanitized = string.toLowerCase().split(' ').join('');
+    var freq = new Map();
+    
+    for (let i = 0; i < sanitized.length; i++) {
+        let char = sanitized.charAt(i);
+        let prevFreq = freq.get(char) || 0;
+        freq.set(char, prevFreq + 1);
+    }
+
+    var oddCount = 0;
+    
+    for (let [char, count] of freq) {
+        if(count % 2 !== 0) oddCount++;
+    }
+
+    return oddCount < 2;
+};
+
 var text = 'Ta ct Coa ';
 var text2 = 'redivider';
-var text3 = 'deifiedf';
+var text3 = 'deifiedfxz';
 
-console.log(isPermutationOfPalindrome(text3));
+console.log(isPermutationOfPalindrome2(text3));
