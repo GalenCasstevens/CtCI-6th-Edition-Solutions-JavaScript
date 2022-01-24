@@ -3,13 +3,29 @@
 
 let zeroMatrix = (matrix) => {
 	var rowContainsZero;
+	var colIndexesThatAreZero = [];
+	var numRows = matrix.length;
+
 	for (let i = 0; i < matrix.length; i++) {
 		if (matrix[i].includes(0)) rowContainsZero = true;
 		for (let j = 0; j < matrix[0].length; j++) {
-			if (rowContainsZero) matrix[i][j] = 0;
+			if (
+				rowContainsZero &&
+				matrix[i][j] === 0 &&
+				!colIndexesThatAreZero.includes(j)
+			)
+				colIndexesThatAreZero.push(j);
+			else if (rowContainsZero) matrix[i][j] = 0;
 		}
 		rowContainsZero = false;
 	}
+
+	for (let i = 0; i < matrix.length; i++) {
+		for (let j = 0; j < colIndexesThatAreZero.length; j++) {
+			matrix[i][colIndexesThatAreZero[j]] = 0;
+		}
+	}
+
 	return matrix;
 };
 
