@@ -4,7 +4,6 @@
 let zeroMatrix = (matrix) => {
 	var rowContainsZero;
 	var colIndexesThatAreZero = [];
-	var numRows = matrix.length;
 
 	for (let i = 0; i < matrix.length; i++) {
 		if (matrix[i].includes(0)) rowContainsZero = true;
