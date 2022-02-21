@@ -12,19 +12,13 @@ let isSubstring = (strOne, strTwo) => {
 	}
 
 	var counter = 0;
-	var strIndex = 0;
-	var subStrIndex = subStr.indexOf(str.charAt(0));
-	if (subStrIndex === -1) return false;
+	var strIndex = str.indexOf(subStr.charAt(0));
+	var subStrIndex = 0;
+	if (strIndex === -1) return false;
 	while (counter < str.length) {
-		if (subStrIndex === subStr.length && counter < subStr.length)
-			subStrIndex = 0;
-		else if (subStrIndex === subStr.length && counter === subStr.length)
-			return true;
-		if (str.charAt(strIndex) !== subStr.charAt(subStrIndex)) {
-			console.log(`strIndex: ${strIndex}`);
-			console.log(`subStrIndex: ${subStrIndex}`);
-			return false;
-		}
+		if (strIndex === str.length && counter < subStr.length) subStrIndex = 0;
+		else if (counter === subStr.length) return true;
+		if (str.charAt(strIndex) !== subStr.charAt(subStrIndex)) return false;
 
 		strIndex++;
 		subStrIndex++;
@@ -34,4 +28,4 @@ let isSubstring = (strOne, strTwo) => {
 	return true;
 };
 
-console.log(isSubstring('sub-zero', 'ub'));
+console.log(isSubstring('one', 'ned'));
