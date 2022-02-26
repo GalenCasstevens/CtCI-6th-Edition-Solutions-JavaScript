@@ -11,8 +11,9 @@ class Range {
 const matrix = [
 	[0, 20, 25, 40],
 	[10, 30, 35, 45],
-	[15, 40, 50, 55],
+	[15, 40, 51, 55],
 	[20, 50, 55, 60],
+	[21, 53, 60, 65],
 ];
 
 let findElement = (matrix, element, rowRange, colRange) => {
@@ -23,4 +24,13 @@ let findElement = (matrix, element, rowRange, colRange) => {
 
 	var midRow = Math.floor(rowRange.start + (rowRange.end - rowRange.start) / 2);
 	var midCol = Math.floor(colRange.start + (colRange.end - colRange.start) / 2);
+
+	if (element < matrix[midRow][midCol])
+		findElement(matrix, element, new Range(0, midRow), new Range(0, midCol));
+	else findElement(matrix, element, new Range(midRow, m), new Range(midCol, n));
 };
+
+var m = matrix.length; // number of rows
+var n = matrix[0].length; // number of columns
+
+console.log(matrix[m][n]);

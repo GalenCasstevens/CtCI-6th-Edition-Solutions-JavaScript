@@ -21,10 +21,10 @@ LinkedList.prototype.replace = function (key, value) {
 	else return this.next.replace(key, value);
 };
 
-LinkedList.prototype.devare = function (key) {
+LinkedList.prototype.delete = function (key) {
 	if (this.keyValuePair[0] === key) {
-		// devare
-	} else this.next.devare(key);
+		// delete
+	} else this.next.delete(key);
 };
 
 var getHash = function (key, limit) {
