@@ -6,7 +6,7 @@ const matrix = [
 	[11, 16, 30, 50],
 	[15, 20, 33, 51],
 	[20, 23, 44, 555],
-	[34, 30, 444, 777],
+	[21, 30, 444, 777],
 ];
 
 let findElement = (matrix, element, minRowInd, maxColInd) => {
@@ -25,4 +25,4 @@ let findElement = (matrix, element, minRowInd, maxColInd) => {
 	}
 };
 
-console.log(findElement(matrix, 51));
+console.log(findElement(matrix, 21));
