@@ -12,7 +12,7 @@ LinkedList.prototype.insert = function (key, value) {
 
 LinkedList.prototype.find = function (key) {
 	if (this.keyValuePair[0] === key) return this.keyValuePair[1];
-	else if (this.next !== null) this.next.find(key, value);
+	else if (this.next !== null) return this.next.find(key);
 	else return null;
 };
 
