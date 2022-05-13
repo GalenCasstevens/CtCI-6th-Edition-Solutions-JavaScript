@@ -23,7 +23,7 @@ LinkedList.prototype.replace = function (key, value) {
 
 LinkedList.prototype.delete = function (key) {
 	if (this.keyValuePair[0] === key) {
-		// delete
+		// this = this.next;
 	} else this.next.delete(key);
 };
 
