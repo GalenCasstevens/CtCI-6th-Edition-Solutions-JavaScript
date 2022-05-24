@@ -38,6 +38,9 @@ class LinkedList {
 			this.head = null;
 			return cur;
 		}
+
+		this.head = this.head.next;
+		return cur;
 	}
 
 	head() {
