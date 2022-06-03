@@ -14,10 +14,10 @@ let isPalindrome = (list) => {
 	}
 
 	for (let i = 0; i < text.length; i++) {
-		var endInd = text.length - (i + 1);
+		var oppInd = text.length - (i + 1);
 		if (!isStrEven(text) && i !== text.length / 2 - 1) {
-			if (text.charAt(i) !== text.charAt(endInd)) return false;
-		} else if (isStrEven(text) && text.charAt(i) !== text.charAt(endInd))
+			if (text.charAt(i) !== text.charAt(oppInd)) return false;
+		} else if (isStrEven(text) && text.charAt(i) !== text.charAt(oppInd))
 			return false;
 	}
 
